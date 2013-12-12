@@ -46,6 +46,13 @@
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:userDefaultsKey];
 }
 
++ (MASShortcut *)globalShortcutForUserDefaultsKey:(NSString *)userDefaultsKey
+{
+    NSData *shortcutData = [[NSUserDefaults standardUserDefaults] dataForKey:userDefaultsKey];
+    return [MASShortcut shortcutWithData:shortcutData];
+}
+
+
 @end
 
 #pragma mark -
